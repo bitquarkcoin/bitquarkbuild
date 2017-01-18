@@ -70,8 +70,8 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
 
             # fetching BitQuark source code
 	    echo " Fetching BitQuark source code.."
-            git clone https://github.com/bitquarkcoin/BitQuark-0.8.3r20.git bitquark-i686
-	    git clone https://github.com/bitquarkcoin/BitQuark-0.8.3r20.git bitquark-x86_64
+            git clone https://github.com/bitquarkcoin/BitQuark-0.8.3r21.git bitquark-i686
+	    git clone https://github.com/bitquarkcoin/BitQuark-0.8.3r21.git bitquark-x86_64
             
             # patch qt
             echo "Patching bitquark-qt.."
@@ -93,7 +93,7 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
             echo "Building bitquark qt 32bit client..."
             cd ${WORKSPACE} || exit_error "Failed to change to workspace dir"
             #make distclean
-            #make -C bitquark-i686 -f Makefile.Release clean
+            make -C bitquark-i686 -f Makefile.Release clean
             make -C bitquark-i686/src -f makefile.unix clean
             make -C bitquark-i686/src -f makefile.linux-mingw clean
             echo "goto ${WORKSPACE}"
