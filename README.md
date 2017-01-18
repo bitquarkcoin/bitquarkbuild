@@ -1,7 +1,7 @@
 BitQuark Builder
 ====================
 
-Copyright (c) 2014-2016 BitQuark Developers
+Copyright (c) 2014-2017 BitQuark Developers
 
 BitQuark Dev Team ([bitquarkcoin@gmail.com](mailto:bitquarkcoin@gmail.com))
 
