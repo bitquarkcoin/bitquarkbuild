@@ -15,7 +15,7 @@ Setup
 --------------------
 You need the follow libraries & applications installed to run BitQuark Builder. On Debian or Ubuntu:
 
-`sudo apt-get install git-core pkg-config automake faketime bsdmainutils zip g++-mingw-w64 mingw-w64 autoconf libtool g++ nsis openssh-server cmake libcap-dev libz-dev libbz2-dev g++-multilib binutils-gold libstdc++6-4.6-pic libboost-all-dev`
+`sudo apt-get install git-core pkg-config automake faketime bsdmainutils zip mingw32 g++-mingw-w64 mingw-w64 autoconf libtool g++ nsis openssh-server cmake libcap-dev libz-dev libbz2-dev g++-multilib binutils-gold libstdc++6-4.6-pic libboost-all-dev`
 
 Then you just need to change to the "bitquarkbuilder" directory and run the files in order as shown below from your Linux terminal:
 
