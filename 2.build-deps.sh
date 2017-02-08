@@ -110,9 +110,9 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
 
             # miniupnpc
             need_rebuild=1
-            if [ -f ${platform_src_dir}/miniupnpc-1.6/libminiupnpc.a ]; then
+            if [ -f ${platform_src_dir}/miniupnpc-1.9/libminiupnpc.a ]; then
                 echo "libminiupnpc.a already built, checking its oldness..."
-                last_mtime=`stat -c "%Z" ${platform_src_dir}/miniupnpc-1.6/libminiupnpc.a`
+                last_mtime=`stat -c "%Z" ${platform_src_dir}/miniupnpc-1.9/libminiupnpc.a`
                 now_time=`date +"%s"`
                 let now_time=now_time-6048000
                 if [ ${last_mtime} -gt ${now_time} ]; then
@@ -122,7 +122,7 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
             fi
             if [ ${need_rebuild} -eq 1 ]; then
                 echo "Building miniupnpc..."
-                cd ${platform_src_dir}/miniupnpc-1.6/ || exit_error "Failed to change to miniupnpc-1.6/ dir"
+                cd ${platform_src_dir}/miniupnpc-1.9/ || exit_error "Failed to change to miniupnpc-1.9/ dir"
                 sed -i 's/CC = gcc/CC = i686-w64-mingw32-gcc/' Makefile.mingw
 #                sed -i 's/wingenminiupnpcstrings \$/wine \.\/wingenminiupnpcstrings \$/' Makefile.mingw
                 sed -i '/\twingenminiupnpcstrings $< $@/d' Makefile.mingw
@@ -135,11 +135,11 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
                 sed -i 's/\tdllwrap/\ti686-w64-mingw32-dllwrap/' Makefile.mingw
                 sed -i 's/driver-name gcc/driver-name i686-w64-mingw32-gcc/' Makefile.mingw
                 AR=i686-w64-mingw32-ar make -f Makefile.mingw
-                if [ ! -f ${platform_src_dir}/miniupnpc-1.6/libminiupnpc.a ]; then
+                if [ ! -f ${platform_src_dir}/miniupnpc-1.9/libminiupnpc.a ]; then
                     exit_error "UNABLE TO FIND generated libminiupnpc.a"
                 fi
             fi
-            [ -h ${platform_src_dir}/miniupnpc ] || ln -s ${platform_src_dir}/miniupnpc-1.6 ${platform_src_dir}/miniupnpc
+            [ -h ${platform_src_dir}/miniupnpc ] || ln -s ${platform_src_dir}/miniupnpc-1.9 ${platform_src_dir}/miniupnpc
             
             # boost
             need_rebuild=1
@@ -275,9 +275,9 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
 
             # miniupnpc
             need_rebuild=1
-            if [ -f ${platform_src_dir}/miniupnpc-1.6/libminiupnpc.a ]; then
+            if [ -f ${platform_src_dir}/miniupnpc-1.9/libminiupnpc.a ]; then
                 echo "libminiupnpc.a already built, checking its oldness..."
-                last_mtime=`stat -c "%Z" ${platform_src_dir}/miniupnpc-1.6/libminiupnpc.a`
+                last_mtime=`stat -c "%Z" ${platform_src_dir}/miniupnpc-1.9/libminiupnpc.a`
                 now_time=`date +"%s"`
                 let now_time=now_time-6048000
                 if [ ${last_mtime} -gt ${now_time} ]; then
@@ -287,7 +287,7 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
             fi
             if [ ${need_rebuild} -eq 1 ]; then
                 echo "Building miniupnpc..."
-                cd ${platform_src_dir}/miniupnpc-1.6/ || exit_error "Failed to change to miniupnpc-1.6/ dir"
+                cd ${platform_src_dir}/miniupnpc-1.9/ || exit_error "Failed to change to miniupnpc-1.9/ dir"
                 sed -i 's/CC = gcc/CC = x86_64-w64-mingw32-gcc/' Makefile.mingw
 #                sed -i 's/wingenminiupnpcstrings \$/wine \.\/wingenminiupnpcstrings \$/' Makefile.mingw
                 sed -i '/\twingenminiupnpcstrings $< $@/d' Makefile.mingw
@@ -300,11 +300,11 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
                 sed -i 's/\tdllwrap/\tx86_64-w64-mingw32-dllwrap/' Makefile.mingw
                 sed -i 's/driver-name gcc/driver-name x86_64-w64-mingw32-gcc/' Makefile.mingw
                 AR=x86_64-w64-mingw32-ar make -f Makefile.mingw
-                if [ ! -f ${platform_src_dir}/miniupnpc-1.6/libminiupnpc.a ]; then
+                if [ ! -f ${platform_src_dir}/miniupnpc-1.9/libminiupnpc.a ]; then
                     exit_error "UNABLE TO FIND generated libminiupnpc.a"
                 fi
             fi
-            [ -h ${platform_src_dir}/miniupnpc ] || ln -s ${platform_src_dir}/miniupnpc-1.6 ${platform_src_dir}/miniupnpc
+            [ -h ${platform_src_dir}/miniupnpc ] || ln -s ${platform_src_dir}/miniupnpc-1.9 ${platform_src_dir}/miniupnpc
             
             # boost
             need_rebuild=1
