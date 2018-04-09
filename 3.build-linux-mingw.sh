@@ -70,8 +70,8 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
 
             # fetching BitQuark source code
 	    echo " Fetching BitQuark source code.."
-            git clone https://github.com/bitquarkcoin/BitQuark-0.8.3r21.git bitquark-i686
-	    git clone https://github.com/bitquarkcoin/BitQuark-0.8.3r21.git bitquark-x86_64
+            git clone https://github.com/bitquarkcoin/BitQuark.git bitquark-i686
+	    git clone https://github.com/bitquarkcoin/BitQuark.git bitquark-x86_64
             
             # patch qt
             echo "Patching bitquark-qt.."
