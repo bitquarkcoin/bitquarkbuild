@@ -4,6 +4,7 @@
 #
 # Fetches BitQuark dependencies once.
 #
+apt-get -y install git-core pkg-config automake faketime bsdmainutils zip mingw32 g++-mingw-w64 mingw-w64 autoconf libtool g++ nsis openssh-server cmake libcap-dev libz-dev libbz2-dev g++-multilib binutils-gold libstdc++6-4.6-pic libboost-all-dev
 
 LINK=`readlink -f $0`
 if [[ -z ${LINK} ]]; then
