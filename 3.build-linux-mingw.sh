@@ -120,7 +120,7 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
             echo "Building bitquark 32-bit installer..."
             cd ${WORKSPACE}/bitquark-i686/share/ || exit_error "Failed to change to share/"
             makensis ./setup-win32.nsi || exit_error "Failed to build installer"
-            cp -f ${WORKSPACE}/bitquark-i686/share/BitQuark-0.8.3.20-win32-setup.exe ${WORKSPACE}/release-i686 || exit_error "Failed to copy installer"
+            cp -f ${WORKSPACE}/bitquark-i686/share/BitQuark-0.8.3.21-win32-setup.exe ${WORKSPACE}/release-i686 || exit_error "Failed to copy installer"
 
         ;;
 
@@ -175,7 +175,7 @@ for CUR_PLATFORM in ${TARGET_PLATFORMS}; do
             echo "Building bitquark 64-bit installer..."
             cd ${WORKSPACE}/bitquark-x86_64/share/ || exit_error "Failed to change to share/"
             makensis ./setup-win64.nsi || exit_error "Failed to build installer"
-            cp -f ${WORKSPACE}/bitquark-x86_64/share/BitQuark-0.8.3.20-win64-setup.exe ${WORKSPACE}/release-x86_64 || exit_error "Failed to copy installer"
+            cp -f ${WORKSPACE}/bitquark-x86_64/share/BitQuark-0.8.3.21-win64-setup.exe ${WORKSPACE}/release-x86_64 || exit_error "Failed to copy installer"
 
         ;;
 
